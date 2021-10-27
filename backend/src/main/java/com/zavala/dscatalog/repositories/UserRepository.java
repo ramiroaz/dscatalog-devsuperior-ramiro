@@ -7,5 +7,7 @@ import com.zavala.dscatalog.entities.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-	
+
+	//busca no banco um usuário X e-mail
+	User findByEmail(String email);
 }
