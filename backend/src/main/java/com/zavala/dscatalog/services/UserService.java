@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.zavala.dscatalog.dto.RoleDTO;
 import com.zavala.dscatalog.dto.UserDTO;
 import com.zavala.dscatalog.dto.UserInsertDTO;
+import com.zavala.dscatalog.dto.UserUpdateDTO;
 import com.zavala.dscatalog.entities.Role;
 import com.zavala.dscatalog.entities.User;
 import com.zavala.dscatalog.repositories.RoleRepository;
@@ -68,7 +69,7 @@ public class UserService {
 	}
 
 	@Transactional
-	public UserDTO update(Long id, UserDTO dto) {
+	public UserDTO update(Long id, UserUpdateDTO dto) {
 		try {
 			User entity = repository.getOne(id);  //não usamos findById para não acessar ao banco duas vezes
 			copyDtoToEntity(dto, entity);
